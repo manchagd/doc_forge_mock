@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       resources :documents, only: [] do
         collection do
           get :types
-          post :process_documents
+          post :process, action: :process_documents
           post :generate
           post :download
         end
