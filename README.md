@@ -1,24 +1,44 @@
-# README
+# Doc Forge Mock API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API mock para simular el servicio de generación de documentos.
 
-Things you may want to cover:
+## Endpoints
 
-* Ruby version
+### Templates
 
-* System dependencies
+#### Obtener todos los templates
+```bash
+curl http://localhost:3030/api/v1/templates
+```
 
-* Configuration
+### Documents
 
-* Database creation
+#### Obtener tipos de documentos
+```bash
+curl http://localhost:3030/api/v1/documents/types
+```
 
-* Database initialization
+#### Procesar documento
+```bash
+curl -X POST http://localhost:3030/api/v1/documents/process \
+  -H "Content-Type: application/json" \
+  -d '{"template_id": "template-hipoteca"}'
+```
 
-* How to run the test suite
+#### Generar documento
+```bash
+curl -X POST http://localhost:3030/api/v1/documents/generate \
+  -H "Content-Type: application/json" \
+  -d '{"template_id": "template-hipoteca"}'
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Descargar documento
+```bash
+curl -X GET http://localhost:3030/api/v1/documents/download -o downloaded_document.pdf
+```
 
-* Deployment instructions
+## Templates disponibles
 
-* ...
+- `template-hipoteca`: Solicitud de Hipoteca
+- `template-arrendamiento`: Contrato de Arrendamiento
+- `template-credito-vehicular`: Solicitud de Crédito Vehicular
