@@ -1,0 +1,105 @@
+templates:
+  - id: "template-hipoteca"
+    name: "Solicitud de Hipoteca"
+    description: "Template para solicitud de hipoteca inmobiliaria"
+    gdrive_id: "gdrive-hipoteca-001"
+    documents:
+      - document_type: "CedulaCiudadania"
+        fields:
+          - name: "numeroDocumento"
+            description: "Número de identificación"
+            required: true
+          - name: "nombreCompleto"
+            description: "Nombre completo del titular"
+            required: true
+          - name: "fechaExpedicion"
+            description: "Fecha de expedición del documento"
+            required: true
+          - name: "lugarExpedicion"
+            description: "Lugar de expedición del documento"
+            required: true
+      - document_type: "CertificadoLibertad"
+        fields:
+          - name: "numeroMatricula"
+            description: "Número de matrícula inmobiliaria"
+            required: true
+          - name: "direccionInmueble"
+            description: "Dirección del inmueble"
+            required: true
+          - name: "valorAvaluo"
+            description: "Valor avalúo del inmueble"
+            required: true
+      - document_type: "CertificadoIngresos"
+        fields:
+          - name: "ingresoMensual"
+            description: "Ingreso mensual promedio"
+            required: true
+          - name: "empresaEmpleadora"
+            description: "Nombre de la empresa empleadora"
+            required: true
+          - name: "tiempoEmpleo"
+            description: "Tiempo de empleo en meses"
+            required: true
+
+  - id: "template-arrendamiento"
+    name: "Contrato de Arrendamiento"
+    description: "Template para contrato de arrendamiento de vivienda"
+    gdrive_id: "gdrive-arrendamiento-001"
+    documents:
+      - document_type: "CedulaCiudadania"
+        fields:
+          - name: "numeroDocumento"
+            description: "Número de identificación"
+            required: true
+          - name: "nombreCompleto"
+            description: "Nombre completo del arrendatario"
+            required: true
+      - document_type: "CertificadoIngresos"
+        fields:
+          - name: "ingresoMensual"
+            description: "Ingreso mensual promedio"
+            required: true
+          - name: "empresaEmpleadora"
+            description: "Nombre de la empresa empleadora"
+            required: true
+      - document_type: "CertificadoCamaraComercio"
+        fields:
+          - name: "nitEmpresa"
+            description: "NIT de la empresa empleadora"
+            required: true
+          - name: "razonSocial"
+            description: "Razón social de la empresa"
+            required: true
+
+  - id: "template-credito-vehicular"
+    name: "Solicitud de Crédito Vehicular"
+    description: "Template para solicitud de crédito para compra de vehículo"
+    gdrive_id: "gdrive-vehiculo-001"
+    documents:
+      - document_type: "CedulaCiudadania"
+        fields:
+          - name: "numeroDocumento"
+            description: "Número de identificación"
+            required: true
+          - name: "nombreCompleto"
+            description: "Nombre completo del solicitante"
+            required: true
+      - document_type: "CertificadoLicencia"
+        fields:
+          - name: "numeroLicencia"
+            description: "Número de licencia de conducción"
+            required: true
+          - name: "categoria"
+            description: "Categoría de la licencia"
+            required: true
+          - name: "fechaExpedicion"
+            description: "Fecha de expedición de la licencia"
+            required: true
+      - document_type: "CertificadoIngresos"
+        fields:
+          - name: "ingresoMensual"
+            description: "Ingreso mensual promedio"
+            required: true
+          - name: "empresaEmpleadora"
+            description: "Nombre de la empresa empleadora"
+            required: true

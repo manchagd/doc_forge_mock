@@ -1,0 +1,19 @@
+documents:
+  - document_type: "CedulaCiudadania"
+    fields:
+      - name: "numeroDocumento"
+        value: "52123456"
+      - name: "nombreCompleto"
+        value: "María Fernanda López Martínez"
+  - document_type: "CertificadoIngresos"
+    fields:
+      - name: "ingresoMensual"
+        value: "12000000"
+      - name: "empresaEmpleadora"
+        value: "Global Consulting Ltda."
+  - document_type: "CertificadoCamaraComercio"
+    fields:
+      - name: "nitEmpresa"
+        value: "900123456-7"
+      - name: "razonSocial"
+        value: "Global Consulting Limitada"

@@ -1,0 +1,21 @@
+documents:
+  - document_type: "CedulaCiudadania"
+    fields:
+      - name: "numeroDocumento"
+        value: "80123456"
+      - name: "nombreCompleto"
+        value: "Carlos Andrés Rodríguez Silva"
+  - document_type: "CertificadoLicencia"
+    fields:
+      - name: "numeroLicencia"
+        value: "C1-12345678"
+      - name: "categoria"
+        value: "B1"
+      - name: "fechaExpedicion"
+        value: "2019-03-10"
+  - document_type: "CertificadoIngresos"
+    fields:
+      - name: "ingresoMensual"
+        value: "15000000"
+      - name: "empresaEmpleadora"
+        value: "Inversiones del Valle S.A."

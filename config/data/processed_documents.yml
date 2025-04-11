@@ -1,0 +1,27 @@
+documents:
+  - document_type: "CedulaCiudadania"
+    fields:
+      - name: "numeroDocumento"
+        value: "79123456"
+      - name: "nombreCompleto"
+        value: "Juan Carlos Pérez Rodríguez"
+      - name: "fechaExpedicion"
+        value: "2020-05-15"
+      - name: "lugarExpedicion"
+        value: "Bogotá D.C."
+  - document_type: "CertificadoLibertad"
+    fields:
+      - name: "numeroMatricula"
+        value: "50-001-123456"
+      - name: "direccionInmueble"
+        value: "Calle 123 # 45-67, Barrio Chapinero, Bogotá D.C."
+      - name: "valorAvaluo"
+        value: "350000000"
+  - document_type: "CertificadoIngresos"
+    fields:
+      - name: "ingresoMensual"
+        value: "8500000"
+      - name: "empresaEmpleadora"
+        value: "Tech Solutions S.A."
+      - name: "tiempoEmpleo"
+        value: "24"
