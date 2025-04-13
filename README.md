@@ -2,6 +2,15 @@
 
 API mock para simular el servicio de generación de documentos.
 
+## Documentación API
+
+La documentación de la API está disponible en Swagger UI:
+
+```bash
+# Acceder a la documentación Swagger
+http://localhost:3030/api-docs
+```
+
 ## Endpoints
 
 ### Templates
@@ -43,9 +52,10 @@ curl -X GET http://localhost:3030/api/v1/documents/download -o downloaded_docume
 - `template-arrendamiento`: Contrato de Arrendamiento
 - `template-credito-vehicular`: Solicitud de Crédito Vehicular
 
+## Verificar estado del servidor
 
-## MOCK
-
+```bash
+curl http://localhost:3030/up
 ```
 
 # GET /api/templates

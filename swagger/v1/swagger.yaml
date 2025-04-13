@@ -1,0 +1,166 @@
+openapi: 3.0.1
+info:
+  title: Doc Forge Mock API
+  description: API mock para simular el servicio de generación de documentos
+  version: '1.0'
+servers:
+  - url: http://localhost:3030
+    description: Local development server
+paths:
+  /api/v1/templates:
+    get:
+      summary: Obtener todos los templates
+      tags:
+        - Templates
+      responses:
+        '200':
+          description: Lista de templates disponibles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      templates:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            name:
+                              type: string
+                            description:
+                              type: string
+                            gdrive_id:
+                              type: string
+                            documents:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  document_type:
+                                    type: string
+                                  fields:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        name:
+                                          type: string
+                                        description:
+                                          type: string
+                                        required:
+                                          type: boolean
+  /api/v1/documents/types:
+    get:
+      summary: Obtener tipos de documentos
+      tags:
+        - Documents
+      responses:
+        '200':
+          description: Lista de tipos de documentos disponibles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      types:
+                        type: array
+                        items:
+                          type: string
+  /api/v1/documents/process:
+    post:
+      summary: Procesar documento
+      tags:
+        - Documents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                template_id:
+                  type: string
+                  enum: [template-hipoteca, template-arrendamiento, template-credito-vehicular]
+      responses:
+        '200':
+          description: Documento procesado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      documents:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            document_type:
+                              type: string
+                            fields:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  name:
+                                    type: string
+                                  value:
+                                    type: string
+  /api/v1/documents/generate:
+    post:
+      summary: Generar documento
+      tags:
+        - Documents
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                template_id:
+                  type: string
+                  enum: [template-hipoteca, template-arrendamiento, template-credito-vehicular]
+      responses:
+        '200':
+          description: Documento generado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      generated_document:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          gdrive_id:
+                            type: string
+                          url:
+                            type: string
+  /api/v1/documents/download:
+    get:
+      summary: Descargar documento
+      tags:
+        - Documents
+      responses:
+        '200':
+          description: Documento descargado exitosamente
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
