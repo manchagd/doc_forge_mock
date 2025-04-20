@@ -41,8 +41,6 @@ module DocForgeMock
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    # Deshabilitar la compilación de assets
-    config.assets.enabled = false
 
     # Configurar el manejo de errores para devolver JSON
     config.middleware.use ActionDispatch::ShowExceptions, false
