@@ -47,7 +47,7 @@ module Api
         # Mock PDF response
         send_file(
           Rails.root.join("public", "sample.pdf"),
-          filename: "document.pdf",
+          filename: "documento_#{SecureRandom.hex(4)}.pdf",
           type: "application/pdf",
           disposition: "attachment"
         )
