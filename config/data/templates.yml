@@ -54,22 +54,22 @@ templates:
           - name: "nombreCompleto"
             description: "Nombre completo del arrendatario"
             required: true
-      - document_type: "CertificadoIngresos"
-        fields:
-          - name: "ingresoMensual"
-            description: "Ingreso mensual promedio"
-            required: true
-          - name: "empresaEmpleadora"
-            description: "Nombre de la empresa empleadora"
-            required: true
-      - document_type: "CertificadoCamaraComercio"
-        fields:
-          - name: "nitEmpresa"
-            description: "NIT de la empresa empleadora"
-            required: true
-          - name: "razonSocial"
-            description: "Razón social de la empresa"
-            required: true
+      # - document_type: "CertificadoIngresos"
+      #   fields:
+      #     - name: "ingresoMensual"
+      #       description: "Ingreso mensual promedio"
+      #       required: true
+      #     - name: "empresaEmpleadora"
+      #       description: "Nombre de la empresa empleadora"
+      #       required: true
+      # - document_type: "CertificadoCamaraComercio"
+      #   fields:
+      #     - name: "nitEmpresa"
+      #       description: "NIT de la empresa empleadora"
+      #       required: true
+      #     - name: "razonSocial"
+      #       description: "Razón social de la empresa"
+      #       required: true
 
   - id: "template-credito-vehicular"
     name: "Solicitud de Crédito Vehicular"

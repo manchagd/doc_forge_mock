@@ -184,24 +184,30 @@ paths:
                       url:
                         type: string
                         example: "https://www.google.com"
-  /api/v1/documents/download:
-    post:
+  /api/v1/documents/{gdrive_id}/download:
+    get:
       summary: Descargar documento
       tags:
         - Documents
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                gdrive_id:
-                  type: string
-                  example: "xxxx-xxxx-xxxx-xxxx"
+      parameters:
+        - name: gdrive_id
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "xxxx-xxxx-xxxx-xxxx"
       responses:
         '200':
           description: Documento descargado exitosamente
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: "application/pdf"
+            Content-Disposition:
+              schema:
+                type: string
+                example: "attachment; filename=document.pdf"
           content:
             application/pdf:
               schema:

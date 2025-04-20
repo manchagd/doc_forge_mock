@@ -21,7 +21,9 @@ Rails.application.routes.draw do
           get :types
           post :process, action: :process_documents
           post :generate
-          post :download
+        end
+        member do
+          get :download
         end
       end
     end
