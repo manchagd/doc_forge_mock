@@ -1,11 +1,12 @@
 services:
   - type: web
-    name: doc-forge-mock
+    name: docforge-mock
     runtime: ruby
-    buildCommand: bundle install
-    startCommand: bundle exec rails server -p $PORT
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec rails server -b 0.0.0.0 -p $PORT"
+    autoDeploy: true
     envVars:
       - key: RAILS_ENV
         value: production
-      - key: RAILS_MASTER_KEY
-        sync: false
+      - key: SECRET_KEY_BASE
+        generateValue: true
